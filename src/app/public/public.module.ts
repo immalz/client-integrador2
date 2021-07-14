@@ -10,6 +10,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ButtonComponent } from './Components/button/button.component';
 import { RegisterComponent } from './Pages/register/register.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RegisterComponent } from './Pages/register/register.component';
     LoginComponent,
     NavbarComponent,
     ButtonComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

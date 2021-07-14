@@ -1,26 +1,43 @@
 
 <div class="home">
-    <app-navbar></app-navbar>
+    <div class="home__navbar">
+        <app-navbar></app-navbar>
+    </div>
     <div class="home__content">
-        <h1 class="animated fadeIn">{{'Compra y Venta de Productos' | uppercase}}</h1>
-        <div class="home__content--buttons animated fadeIn">
-            <button mat-raised-button class="btn_register" routerLink="/registro">Registrarse</button>
-            <button mat-raised-button class="btn_login" routerLink="/acceder">Iniciar Sesión</button>
+        <div class="filters">
+            <mat-form-field appearance="standard">
+                <mat-label>Filtrar por Categoria</mat-label>
+                <mat-select (selectionChange)="filter($event.value)">
+                  <mat-option [value]="category.codCategoria" *ngFor="let category of categories">{{category.descripcion}}</mat-option>
+                  <mat-option value="1010">Todos</mat-option>
+                </mat-select>
+              </mat-form-field>
         </div>
-
-       
-        <div class="home__content--layers">
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
+        <div class="products">
+            <div class="card" *ngFor="let product of products">
+                <div class="card__image">
+                    <img [src]="product.imagen" [alt]="product.nombre">
+                </div>
+                <div class="card__description">
+                    <div class="text">
+                        <h3 style="text-align: center;"> {{product.nombre}}</h3>
+           <p> <b>Precio:</b> {{product.precio | currency: 'PEN '}}</p>
+           <p> <b>Stock: </b> {{product.stock}} unit.</p>
+           <p> <b>Estado: </b> Nuevo</p>
+                    </div>
+                    <div class="btns">
+                        <button mat-fab disabled>
+                            <mat-icon>remove_red_eye</mat-icon>
+                        </button>
+                        <button style="background-color: #3483fa;" mat-fab>
+                            <mat-icon>shopping_cart</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home__footer">
+        <app-footer></app-footer>
     </div>
 </div>

@@ -1,9 +1,37 @@
 <nav class="navbar">
     <div class="navbar__logo">
         <mat-icon>account_balance_wallet</mat-icon>
-        <span>CONTROL DE GASTOS</span>
+        <span>FASTLY</span>
     </div>
-    <div class="navbar__buttons">
-        <button routerLink="/acceder">Acceder</button>
-    </div>
+    <ng-container *ngIf="logged; else not">
+        <div class="navbar__buttons">
+            <button mat-icon-button>
+              <mat-icon>shopping_cart</mat-icon>
+            </button>
+
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>person</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="['/perfil/actualizar-datos']">
+                  <mat-icon>account_box</mat-icon>
+                  <span>Perfil</span>
+                </button>
+                <button mat-menu-item [routerLink]="['/perfil']" >
+                  <mat-icon>store</mat-icon>
+                  <span>Mis Productos</span>
+                </button>
+                <button mat-menu-item (click)="loggout()">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>Cerrar Sesión</span>
+                </button>
+              </mat-menu>
+
+        </div>
+    </ng-container>
+    <ng-template #not>
+        <div class="navbar__buttons">
+            <button mat-flat-button color="primary" routerLink="/acceder">Ingresar</button>
+        </div>
+    </ng-template>
 </nav>

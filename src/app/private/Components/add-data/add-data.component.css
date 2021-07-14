@@ -1,6 +1,6 @@
 .add {
   width: 380px;
-  height: 330px;
+  min-height: 330px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

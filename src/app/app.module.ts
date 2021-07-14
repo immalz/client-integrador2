@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 //material module
 import { MaterialModule } from './material/material.module';
 import { SidebarComponent } from './private/Components/sidebar/sidebar.component';
+import { NavbarComponent } from './public/Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SidebarComponent } from './private/Components/sidebar/sidebar.component
     MaterialModule
   ],
   providers: [
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent
   ],
   bootstrap: [AppComponent]
 })

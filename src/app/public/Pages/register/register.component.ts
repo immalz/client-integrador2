@@ -19,9 +19,9 @@ export class RegisterComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) {
     this.formRegister = this.builder.group({
-      username: ['', Validators.required],
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.required],
+      nombre: ['', Validators.required],
+      correo: ['', Validators.compose([Validators.required, Validators.email])],
+      pass: ['', Validators.required],
     });
   }
 

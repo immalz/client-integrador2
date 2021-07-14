@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) {
     this.formLogin = this.builder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+      correo: ['', Validators.required],
+      pass: ['', Validators.required],
     });
   }
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         if (res['message']) {
           this._snackBar.open(res['message'], 'cerrar');
         } else {
-          localStorage.setItem('user', JSON.stringify(res[0].id_user));
+          localStorage.setItem('user', JSON.stringify(res[0].cod_cliente));
           this.router.navigate(['/perfil']);
         }
       },

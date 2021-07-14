@@ -12,6 +12,8 @@ import { UpdateComponent } from './Pages/update/update.component';
 import { AddDataComponent } from './Components/add-data/add-data.component';
 import { AddBalanceComponent } from './Components/add-balance/add-balance.component';
 import { RegisterBalanceComponent } from './Components/register-balance/register-balance.component';
+import { PurchaseOrdersComponent } from './Pages/purchase-orders/purchase-orders.component';
+import { SalesOrdersComponent } from './Pages/sales-orders/sales-orders.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { RegisterBalanceComponent } from './Components/register-balance/register
     UpdateComponent,
     AddDataComponent,
     AddBalanceComponent,
-    RegisterBalanceComponent
+    RegisterBalanceComponent,
+    PurchaseOrdersComponent,
+    SalesOrdersComponent
   ],
   imports: [
     CommonModule,

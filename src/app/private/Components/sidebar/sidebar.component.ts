@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarComponent } from 'src/app/public/Components/navbar/navbar.component';
 import { AuthService } from 'src/app/public/services/auth.service';
 import { UserService } from '../../services/user.service';
 
@@ -16,7 +17,8 @@ export class SidebarComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private navbar: NavbarComponent
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +32,11 @@ export class SidebarComponent implements OnInit {
         this.user = res;
       }
     )
+  }
+
+  goHome(): any {
+    this.navbar.ngOnInit();
+    this.router.navigate(['/']);
   }
 
   exit(): void {

@@ -23,10 +23,10 @@ export class UpdateComponent implements OnInit {
     private sidebar: SidebarComponent
   ) {
     this.userForm = this.builder.group({
-      username: ['', Validators.required],
-      email: [null, Validators.email],
-      password: [null, Validators.required],
-      image: [null],
+      nombre: ['', Validators.required],
+      correo: [null, Validators.email],
+      pass: [null, Validators.required],
+      imagen: [null],
     });
    }
 
@@ -38,15 +38,15 @@ export class UpdateComponent implements OnInit {
 
   editMode(): any {
     if (this.edit) {
-      this.userForm.controls['username'].disable();
-      this.userForm.controls['email'].disable();
-      this.userForm.controls['password'].disable();
-      this.userForm.controls['image'].disable();
+      this.userForm.controls['nombre'].disable();
+      this.userForm.controls['correo'].disable();
+      this.userForm.controls['pass'].disable();
+      this.userForm.controls['imagen'].disable();
     } else {
-      this.userForm.controls['username'].enable();
-      this.userForm.controls['email'].enable();
-      this.userForm.controls['password'].enable();
-      this.userForm.controls['image'].enable();
+      this.userForm.controls['nombre'].enable();
+      this.userForm.controls['correo'].enable();
+      this.userForm.controls['pass'].enable();
+      this.userForm.controls['imagen'].enable();
     }
   }
 
@@ -71,10 +71,10 @@ export class UpdateComponent implements OnInit {
         console.log(res);
         this.user = res;
         this.userForm.patchValue({
-          username: this.user.username,
-          email: this.user.email,
-          password: this.user.password,
-          image: this.user.image
+          nombre: this.user.nombre,
+          correo: this.user.correo,
+          pass: this.user.pass,
+          imagen: this.user.imagen
         })
       }
     )

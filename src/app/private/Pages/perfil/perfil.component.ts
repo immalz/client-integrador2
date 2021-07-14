@@ -28,13 +28,14 @@ export class PerfilComponent implements OnInit {
     this.userService.getUser(this.id).subscribe(
       (res: string) => {
         this.user = res;
+        console.log(this.user);
         this.checkSession();
       }
     )
   }
 
   public checkSession(): void {
-    if (this.user.username) {
+    if (this.user.nombre !== '') {
       this.loading = false;
     } else {
       this._snackBar.open('¡No ha iniciado sesión!', 'cerrar');
