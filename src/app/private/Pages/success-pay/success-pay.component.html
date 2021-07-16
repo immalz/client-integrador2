@@ -1,0 +1,17 @@
+<div class="success">
+    <ng-container *ngIf="notLoading; else loading">
+        <app-loading></app-loading>
+    </ng-container>
+    <ng-template #loading>
+        <div class="success__data animated fadeIn" >
+            <img src="https://i.pinimg.com/originals/71/b8/37/71b837ca48cf5ce94dc8193520d6fdce.gif">
+            <div class="text">
+                <h2>¡Compra Exitosa!</h2>
+                <p><b>Nº de Orden:</b> {{order.id_pedido}}</p>
+                <p><b>Monto Total:</b> {{order.total | currency: 'PEN '}}</p>
+                <p><b>Fecha:</b> {{order.date | date: 'short'}}</p>
+            <button (click)="removeLS()" mat-raised-button [routerLink]="['/']">Regresar al Inicio</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

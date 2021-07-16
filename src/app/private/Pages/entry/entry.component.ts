@@ -11,11 +11,11 @@ import { UserService } from '../../services/user.service';
 import { AmountService } from '../../services/amount.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddBalanceComponent } from '../../Components/add-balance/add-balance.component';
-import {jsPDF} from 'jspdf';
-import 'jspdf-autotable';
 import {UserOptions} from 'jspdf-autotable';
 import { ProductService } from '../../services/product.service';
 
+import {jsPDF} from 'jspdf';
+import 'jspdf-autotable';
 interface jsPDFWidthPlugin extends jsPDF {
   autoTable : (options: UserOptions) => jsPDF;
 }

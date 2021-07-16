@@ -32,7 +32,9 @@ import { FooterComponent } from './Components/footer/footer.component';
   ],
   exports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FooterComponent,
+    NavbarComponent
   ]
 })
 export class PublicModule { }

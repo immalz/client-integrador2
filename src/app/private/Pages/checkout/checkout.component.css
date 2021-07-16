@@ -1,0 +1,162 @@
+.checkout {
+    width: 100%;
+    height: 100vh;
+}
+
+.checkout__navbar {
+    width: 100%;
+    height: 80px;
+}
+
+.checkout__content {
+    width: 100%;
+    margin: 0 auto;
+    height: calc(100% - 180px);
+    background: #ebebeb;
+    overflow-y: scroll;
+}
+
+.checkout__content::-webkit-scrollbar {
+    width: 0;
+}
+
+.checkout__content h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.checkout__content .double {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout__content .results {
+    width: 300px;
+    background: #fff;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkout__content .products{
+    width: 50%;
+    max-height: 698px;
+    overflow-y: scroll;
+    padding: 20px;
+    margin: 0;
+    margin-right: 20px;
+    background: #fff;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+}
+
+.checkout__content .products::-webkit-scrollbar {
+    width: 0;
+}
+
+.checkout__content .products .product {
+    width: 95%;
+    height: 150px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+    display: flex;
+}
+
+.checkout__content .products .product:hover { 
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1);
+}
+.checkout__content .products .product:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.checkout__content .products .product__image {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.checkout__content .products .product__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .3s ease;
+}
+
+.checkout__content .products .product__description {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.checkout__content .products .product__btns {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results__direction {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.have {
+    width: 100%;
+}
+
+.have h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.have div {
+    width: 90%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.have .btns {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.have .btns .mat-flat-button {
+    width: 100%;
+}
+
+
+.results__direction.have p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.results__data {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+
+.checkout__footer {
+    width: 100%;
+}

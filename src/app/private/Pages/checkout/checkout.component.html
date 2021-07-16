@@ -1,0 +1,74 @@
+<div class="checkout">
+    <div class="checkout__navbar">
+        <app-navbar></app-navbar>
+    </div>
+    <ng-container *ngIf="notLoading; else loading">
+        <app-loading></app-loading>
+    </ng-container>
+    <ng-template #loading>
+        <div class="checkout__content animated fadeIn">
+            <h1>{{'Resumen de la Compra' | uppercase}}</h1>
+    
+            <div class="double">
+                <div class="products">
+                    <div class="product" *ngFor="let product of products">
+                      <div class="product__image">
+                        <img [src]="product.imagen">
+                      </div>
+                      <div class="product__description">
+                        <p><b>Nombre:</b> {{product.nombre}}</p>
+                        <p><b>Precio:</b> {{product.precio | currency: 'PEN '}}</p>
+                        <p><b>Estado:</b> {{product.estado || 'Sin Especificar'}}</p>
+                        <p><b>Cantidad:</b> 1</p>
+                      </div>
+                      <div class="product__btns">
+                        <button mat-mini-fab color="warn" (click)="removeProduct(product, $event)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <div class="results">
+                    <ng-container *ngIf="!haveDirection; else have">
+                        <div class="results__direction">
+                            Sin referencia de Envio.
+                            <button mat-flat-button color="primary" (click)="openDialog()">
+                                Añadir Dirección
+                            </button>
+                        </div>
+                    </ng-container>
+                <ng-template #have>
+                    <div class=" have">
+                        <h2>DIRECCIÓN DE ENVIO</h2>
+                        <div>
+                            <b>Nombre:</b><p> {{direction.name}}</p>
+                        </div>
+                        <div>
+                            <b>Dirección:</b><p> {{direction.direction}}</p>
+                        </div>
+                        <div>
+                            <b>Referencia:</b><p> {{direction.reference}}</p>
+                        </div>
+                        <div>
+                            <b>Celular:</b><p> {{direction.phone}}</p>
+                        </div>
+                        <div class="btns">
+                            <button mat-flat-button color="primary" (click)="openDialog()">
+                                Cambiar Dirección
+                            </button>
+                        </div>
+                    </div>
+                </ng-template>
+                <div class="results__data">
+                    <p><b>Subtotal:</b> {{total | currency: 'PEN '}}</p>
+                <p><b>total:</b> {{total | currency: 'PEN '}}</p>
+                <button mat-raised-button color="warn" (click)="success()">PAGAR</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <div class="checkout__footer">
+        <app-footer></app-footer>
+    </div>
+</div>

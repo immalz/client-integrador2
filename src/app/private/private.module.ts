@@ -14,6 +14,10 @@ import { AddBalanceComponent } from './Components/add-balance/add-balance.compon
 import { RegisterBalanceComponent } from './Components/register-balance/register-balance.component';
 import { PurchaseOrdersComponent } from './Pages/purchase-orders/purchase-orders.component';
 import { SalesOrdersComponent } from './Pages/sales-orders/sales-orders.component';
+import { CheckoutComponent } from './Pages/checkout/checkout.component';
+import { PublicModule } from '../public/public.module';
+import { DirectionRegisterComponent } from './Components/direction-register/direction-register.component';
+import { SuccessPayComponent } from './Pages/success-pay/success-pay.component';
 
 
 @NgModule({
@@ -27,11 +31,15 @@ import { SalesOrdersComponent } from './Pages/sales-orders/sales-orders.componen
     AddBalanceComponent,
     RegisterBalanceComponent,
     PurchaseOrdersComponent,
-    SalesOrdersComponent
+    SalesOrdersComponent,
+    CheckoutComponent,
+    DirectionRegisterComponent,
+    SuccessPayComponent
   ],
   imports: [
     CommonModule,
     PrivateRoutingModule,
+    PublicModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule

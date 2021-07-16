@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+
+  .total {
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 100px;
+  }
+
+  .total .search {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+  }
+
+  .mat-column-Productos {
+    width: 40%;
+  }

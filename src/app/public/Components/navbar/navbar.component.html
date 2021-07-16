@@ -1,13 +1,48 @@
 <nav class="navbar">
-    <div class="navbar__logo">
+    <div class="navbar__logo" [routerLink]="['/']"  >
         <mat-icon>account_balance_wallet</mat-icon>
         <span>FASTLY</span>
     </div>
     <ng-container *ngIf="logged; else not">
         <div class="navbar__buttons">
-            <button mat-icon-button>
+            <button mat-button [matMenuTriggerFor]="beforeMenu" mat-icon-button (click)="checkProducts()">
               <mat-icon>shopping_cart</mat-icon>
             </button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            
+            <div class="products">
+              <ng-container *ngIf=" products == null ||products.length === 0; else full">
+                <div style="width: 100%; display: flex; justify-content: center;">
+                  <img src="https://www.bateriasmosconi.com.ar/images/carritovacio.png">
+                </div>
+              </ng-container>
+              <ng-template #full>
+                <div class="product" *ngFor="let product of products">
+                  <div class="product__image">
+                    <img [src]="product.imagen">
+                  </div>
+                  <div class="product__description">
+                    <p><b>Nombre:</b> {{product.nombre}}</p>
+                    <p><b>Cantidad:</b> 1</p>
+                    <p><b>Precio:</b> {{product.precio}}</p>
+                  </div>
+                  <div class="product__btns">
+                    <button mat-mini-fab color="warn" (click)="removeProduct(product, $event)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+            <ng-container *ngIf=" products == null ||products.length === 0; else fully">
+
+            </ng-container>
+            <ng-template #fully>
+              <div class="checkout" >
+                <button mat-flat-button (click)="checkout()">Procesar Pago</button>
+              </div>
+            </ng-template>
+          </mat-menu>
 
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                 <mat-icon>person</mat-icon>

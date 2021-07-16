@@ -21,15 +21,15 @@
                 <div class="card__description">
                     <div class="text">
                         <h3 style="text-align: center;"> {{product.nombre}}</h3>
-           <p> <b>Precio:</b> {{product.precio | currency: 'PEN '}}</p>
-           <p> <b>Stock: </b> {{product.stock}} unit.</p>
-           <p> <b>Estado: </b> Nuevo</p>
+                        <p> <b>Precio:</b> {{product.precio | currency: 'PEN '}}</p>
+                        <p> <b>Stock: </b> {{product.stock}} unit.</p>
+                        <p> <b>Estado: </b> {{product.estado || 'No Especificado'}}</p>
                     </div>
                     <div class="btns">
                         <button mat-fab disabled>
                             <mat-icon>remove_red_eye</mat-icon>
                         </button>
-                        <button style="background-color: #3483fa;" mat-fab>
+                        <button (click)="checkCart(product)" style="background-color: #3483fa;" mat-fab>
                             <mat-icon>shopping_cart</mat-icon>
                         </button>
                     </div>
