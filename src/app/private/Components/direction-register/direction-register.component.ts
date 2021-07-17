@@ -17,6 +17,7 @@ export class DirectionRegisterComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       direction: ['', Validators.required],
+      email: ['', Validators.required],
       reference: ['', Validators.required],
       phone: [null, Validators.required],
     })

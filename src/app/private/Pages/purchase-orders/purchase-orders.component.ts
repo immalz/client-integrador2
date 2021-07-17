@@ -73,19 +73,14 @@ export class PurchaseOrdersComponent implements OnInit, AfterViewInit  {
     const doc = new jsPDF('portrait', 'px', 'a4') as jsPDFWidthPlugin;
 
     doc.text('Ordenes de Compra', 180, 20);
-
+    
     let body: any = [];
 
     this.orders.forEach((element: any) => {
-
       let products: any = [];
-      let order: any = this.orders;
-
       for (const product of element.linea) {
         products.push(product.nombre)
-        console.log(products);
       }
-      console.log(element.linea);
       let temp = [element.id_pedido, products, element.total , element.status, new Date(element.date).toLocaleDateString()];
       body.push(temp);
     });
@@ -93,9 +88,7 @@ export class PurchaseOrdersComponent implements OnInit, AfterViewInit  {
     doc.autoTable({
       head: [['N° de Orden', 'Productos', 'Monto', 'Estado', 'Fecha de Compra']],
       body: body,
-
     })
-    
     doc.save('Reporte de Ordenes de Compra.pdf');
   }
 

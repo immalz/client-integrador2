@@ -70,8 +70,20 @@ export class CheckoutComponent implements OnInit {
       linea: JSON.stringify(this.products),
       status: 'PAGO RECIBICO',
       total: this.total
-    }
-    this.orderService.saveOrder(payload).subscribe(
+    };
+
+    const mailer = {
+      direction: this.direction.direction,
+      email: this.direction.email,
+      name: this.direction.name,
+      phone: this.direction.phone,
+      reference: this.direction.reference
+    };
+
+    console.log(mailer);
+
+    const body = [payload, mailer]
+    this.orderService.saveOrder(body).subscribe(
       (res: any) => {
         console.log(res);
         const orderID = res.pedidoRegister.insertId;

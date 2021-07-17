@@ -31,7 +31,7 @@ export class EntryComponent implements OnInit  {
   id: any;
   user: any = [];
   products: any = [];
-
+  cantidad: any = [];
   constructor(
     public dialog: MatDialog,
     private perfil: PerfilComponent,
@@ -49,18 +49,16 @@ export class EntryComponent implements OnInit  {
 
   
   getProducts(): any {
-    console.log('me me llame');
    this.productService.getProducts().subscribe(
       (res: object[]) => {
-        this.products = res;
-        console.log(res);
+        this.products = res.filter((element: any) => Number(element.codVendedor) === this.id);
+        res !== null ? this.cantidad = this.products.length : this.cantidad = 0
       }
     )  
   }
 
   public addProduct(mode: string, row? : any): void {
     let dialogRef = this.dialog.open(AddDataComponent);
-    console.log('entre');
     mode === 'create' ? dialogRef.componentInstance.mode = 'create' : dialogRef.componentInstance.dataProduct = row
 
     dialogRef.afterClosed().subscribe(result => {

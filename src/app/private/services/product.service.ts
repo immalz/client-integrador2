@@ -18,6 +18,9 @@ export class ProductService {
   getProduct(id: any): any {
     return this.http.get<any>(environment.dev + `producto/${id}`);
   }
+  getProductByUser(id: any): any {
+    return this.http.get<any>(environment.dev + `producto/products${id}`);
+  }
 
   createProduct(payload: any): any {
     return this.http.post<any>(environment.dev + `producto`, payload);

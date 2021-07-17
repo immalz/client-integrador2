@@ -47,6 +47,11 @@
   color: var(--color-text);
 }
 
+.navbar__buttons .mat-flat-button  {
+  width: 150px;
+  margin: 0 10px;
+}
+
 .products {
   width: 350px;
   min-height: 100px;

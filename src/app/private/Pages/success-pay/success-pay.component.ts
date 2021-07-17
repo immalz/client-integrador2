@@ -46,7 +46,6 @@ export class SuccessPayComponent implements OnInit {
 
   removeLS(): void {
     localStorage.removeItem('products');
-    localStorage.removeItem('direction');
   }
 
 }
